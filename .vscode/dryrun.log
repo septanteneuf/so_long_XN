@@ -1,0 +1,16 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Volumes/MacFD - Données/Users/79Prod/42/cursus/rank2/so_long'
+gcc -Wall -Werror -Wextra    -c -o src/so_long.o src/so_long.c
+gcc -Wall -Werror -Wextra    -c -o src/collectexit.o src/collectexit.c
+gcc -Wall -Werror -Wextra    -c -o src/errors.o src/errors.c
+gcc -Wall -Werror -Wextra    -c -o src/errorsquare.o src/errorsquare.c
+gcc -Wall -Werror -Wextra    -c -o src/exitgame.o src/exitgame.c
+gcc -Wall -Werror -Wextra    -c -o src/init_img.o src/init_img.c
+gcc -Wall -Werror -Wextra    -c -o src/moves.o src/moves.c
+gcc -Wall -Werror -Wextra    -c -o src/paint.o src/paint.c
+gcc -Wall -Werror -Wextra    -c -o src/updatemap.o src/updatemap.c
+make -C ft_printf
+make -C libft
+gcc -Wall -Werror -Wextra  src/so_long.c src/collectexit.c src/errors.c src/errorsquare.c src/exitgame.c src/init_img.c src/moves.c src/paint.c src/updatemap.c  ft_printf/libftprintf.a libft/libft.a mlx/libmlx.a -Lmlx -lmlx -framework OpenGL -framework AppKit -o so_long 
+make: Leaving directory `/Volumes/MacFD - Données/Users/79Prod/42/cursus/rank2/so_long'
+ 
