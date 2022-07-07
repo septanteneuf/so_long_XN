@@ -5,14 +5,14 @@ CFLAGS	=	-Wall -Werror -Wextra #-g -fsanitize=address -Wdeprecated-declarations
 NAME	=	so_long 
 
 SRC		=	src/so_long.c \
-			src/collectexit.c \
-			src/errors.c \
-			src/errorsquare.c \
-			src/exitgame.c \
+			src/check_collect.c \
+			src/check_errors.c \
+			src/check_error_square.c \
+			src/exit_game.c \
 			src/init_img.c \
 			src/moves.c \
 			src/paint.c \
-			src/updatemap.c \
+			src/update_map.c \
 
 OBJ 	=	$(SRC:.c=.o)
 
