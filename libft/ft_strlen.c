@@ -3,23 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jzhou <jzhou@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bbourcy <bbourcy@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/16 08:11:19 by jzhou             #+#    #+#             */
-/*   Updated: 2021/06/25 20:41:26 by jzhou            ###   ########.fr       */
+/*   Created: 2021/11/03 13:52:55 by bbourcy           #+#    #+#             */
+/*   Updated: 2022/07/08 15:44:43 by bbourcy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+
 size_t	ft_strlen(const char *s)
 {
-	int	index;
+	size_t	count;
 
-	index = 0;
-	while (s[index] != '\0')
+	count = 0;
+	while (s[count])
 	{
-		index++;
+		if (s[count] != '\0')
+			count++;
 	}
-	return (index);
+	return (count);
 }

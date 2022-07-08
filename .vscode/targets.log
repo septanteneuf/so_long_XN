@@ -7,10 +7,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
  
-make: *** No rule to make target `src/so_long.o', needed by `so_long'.  Stop.
 
-
-# Make data base, printed on Thu Jun 30 17:59:14 2022
+# Make data base, printed on Fri Jul  8 17:13:01 2022
 
 # Variables
 
@@ -21,7 +19,7 @@ make: *** No rule to make target `src/so_long.o', needed by `so_long'.  Stop.
 # makefile (from `Makefile', line 17)
 OBJ = $(SRC:.c=.o)
 # makefile (from `Makefile', line 7)
-SRC = src/so_long.c src/collectexit.c src/errors.c src/errorsquare.c src/exitgame.c src/init_img.c src/moves.c src/paint.c src/updatemap.c 
+SRC = src/so_long.c src/check_collect.c src/check_errors.c src/check_error_square.c src/exit_game.c src/init_img.c src/moves.c src/paint.c src/update_map.c 
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
@@ -31,11 +29,11 @@ VSCODE_LOG_NATIVE = false
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Volumes/MacFD - Données/Users/79Prod/42/cursus/rank2/so_long
+CURDIR := /Users/bbourcy/42/cursus/rank2/so_long_XN
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{},"_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 3)
@@ -45,13 +43,11 @@ MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/xw/hhc3dmwx5z1b0nf2z2m00rx80000gn/T/vscode-ipc-e4bf4253-713a-4994-8091-53c6242046dc.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000c_l80032mt/T/vscode-ipc-060dcaaa-4bbf-42f4-80cc-25671378817f.sock
 # environment
 VSCODE_CWD = /
 # environment
-PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-# environment
-LaunchInstanceID = 98FB2BA7-C999-4E15-A8C0-0BF800B52104
+PATH = /Users/bbourcy/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Apple/usr/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -59,25 +55,27 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.CeNemVW2GF/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.aorj4uN1y9/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
+HOMEBREW_TEMP = /tmp/bbourcy/Homebrew/Temp
+# environment
 VSCODE_PIPE_LOGGING = true
 # environment
-PWD = /Volumes/MacFD - Données/Users/79Prod/42/cursus/rank2/so_long
+PWD = /Users/bbourcy/42/cursus/rank2/so_long_XN
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-HOME = /Users/brunobourcy
+HOME = /Users/bbourcy
 # default
-MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/brunobourcy/Library/Application Support/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
+VSCODE_CODE_CACHE_PATH = /Users/bbourcy/Library/Application Support/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
-LOGNAME = brunobourcy
+LOGNAME = bbourcy
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
@@ -91,13 +89,15 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
+HOMEBREW_CACHE = /tmp/bbourcy/Homebrew/Caches
+# environment
 SHLVL = 1
 # makefile (from `Makefile', line 1)
 CC = gcc
 # default
 MAKE_VERSION := 3.81
 # environment
-USER = brunobourcy
+USER = bbourcy
 # makefile
 .DEFAULT_GOAL := all
 # makefile (from `Makefile', line 5)
@@ -105,15 +105,15 @@ NAME = so_long
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
-MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
 # default
 .VARIABLES := 
 # environment
-TMPDIR = /var/folders/xw/hhc3dmwx5z1b0nf2z2m00rx80000gn/T/
+TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n000c_l80032mt/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/brunobourcy/Library/Application Support/Code/1.68.1-main.sock
+VSCODE_IPC_HOOK = /Users/bbourcy/Library/Application Support/Code/1.68.1-main.sock
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -121,23 +121,21 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000001.Electron
+MAIL = bbourcy@student.42lausanne.ch
+# environment
+XPC_SERVICE_NAME = com.microsoft.VSCode.2380
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
-__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x12
-# environment
-COMMAND_MODE = unix2003
+__CF_USER_TEXT_ENCODING = 0x18A9A:0x0:0x0
 # default
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
 # environment
 LC_ALL = C
-# environment
-SECURITYSESSIONID = 186a6
 # automatic
 ^F = $(notdir $^)
 # default
@@ -149,7 +147,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 367
+VSCODE_PID = 33785
 # variable set hash-table stats:
 # Load=68/1024=7%, Rehash=0, Collisions=3/96=3%
 
@@ -159,9 +157,12 @@ VSCODE_PID = 367
 
 # Directories
 
-# . (device 16777223, inode 12934588101): 19 files, no impossibilities.
+ 
+make: *** No rule to make target `src/so_long.o', needed by `so_long'.  Stop.
 
-# 19 files, no impossibilities in 1 directories.
+# . (device 16777225, inode 1571747): 14 files, no impossibilities.
+
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -170,19 +171,7 @@ VSCODE_PID = 367
 # Files
 
 # Not a target:
-src/errorsquare.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-src/collectexit.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-src/errors.o:
+src/check_collect.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -210,14 +199,20 @@ all: so_long
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-29 16:56:08
+#  Last modified 2022-07-08 12:59:02
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-src/updatemap.o:
+src/exit_game.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/update_map.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -232,6 +227,12 @@ fclean: clean
 	make fclean -C libft
 	rm -f $(NAME)
 	
+
+# Not a target:
+src/check_error_square.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/so_long.o:
@@ -270,7 +271,13 @@ src/init_img.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-so_long: src/so_long.o src/collectexit.o src/errors.o src/errorsquare.o src/exitgame.o src/init_img.o src/moves.o src/paint.o src/updatemap.o
+# Not a target:
+src/check_errors.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+so_long: src/so_long.o src/check_collect.o src/check_errors.o src/check_error_square.o src/exit_game.o src/init_img.o src/moves.o src/paint.o src/update_map.o
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -284,12 +291,6 @@ so_long: src/so_long.o src/collectexit.o src/errors.o src/errorsquare.o src/exit
 
 # Not a target:
 src/moves.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-src/exitgame.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -313,6 +314,6 @@ src/paint.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Jun 30 17:59:14 2022
+# Finished Make data base on Fri Jul  8 17:13:01 2022
 
  

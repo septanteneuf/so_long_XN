@@ -3,41 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jzhou <jzhou@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bbourcy <bbourcy@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/22 13:34:38 by jzhou             #+#    #+#             */
-/*   Updated: 2021/06/27 11:41:34 by jzhou            ###   ########.fr       */
+/*   Created: 2021/11/04 15:07:53 by bbourcy           #+#    #+#             */
+/*   Updated: 2022/07/08 15:44:24 by bbourcy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	index;
-	size_t	jindex;
-	size_t	length;
-	char	*newstr;
+	size_t	i;
+	char	*dst;	
+	size_t	l1;
+	size_t	l2;
 
-	if (s1 == 0 || s2 == 0)
-		return (0);
-	index = 0;
-	jindex = 0;
-	length = ft_strlen(s1) + ft_strlen(s2);
-	newstr = (char *)malloc((length + 1) * sizeof(char));
-	if (newstr == 0)
-		return (0);
-	while (s1[index] != '\0')
+	if (!s1 || !s2)
+		return (NULL);
+	l1 = ft_strlen(s1);
+	l2 = ft_strlen(s2);
+	i = 0;
+	dst = malloc(l1 + l2 + 1);
+	if (!dst)
+		return (NULL);
+	while (i < l1)
 	{
-		newstr[index] = s1[index];
-		index++;
+		dst[i] = s1[i];
+		i++;
 	}
-	while (s2[jindex] != '\0')
+	while (i < (l1 + l2 + 1))
 	{
-		newstr[index + jindex] = s2[jindex];
-		jindex++;
+		dst[i] = s2[i - l1];
+		i++;
 	}
-	newstr[index + jindex] = '\0';
-	return (newstr);
+	return (dst);
 }
