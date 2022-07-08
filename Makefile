@@ -22,7 +22,8 @@ $(NAME) : 	$(OBJ)
 #			make -C mlx
 			make -C ft_printf
 			make -C libft
-			$(CC) $(CFLAGS) $(SRC) ft_printf/libftprintf.a libft/libft.a mlx/libmlx.a -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+#			$(CC) $(CFLAGS) $(SRC) ft_printf/libftprintf.a libft/libft.a mlx/libmlx.a -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+			$(CC) $(CFLAGS) $(SRC) ft_printf/libftprintf.a libft/libft.a mlx/libmlx.dylib -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 # %.o : %.c
 # 			${CC} ${FLAGS} -c $< -o ${<:.c=.o}
