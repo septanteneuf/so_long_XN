@@ -7,6 +7,7 @@ gcc -Wall -Werror -Wextra    -c -o src/check_errors.o src/check_errors.c
 gcc -Wall -Werror -Wextra    -c -o src/check_error_square.o src/check_error_square.c
 gcc -Wall -Werror -Wextra    -c -o src/exit_game.o src/exit_game.c
 gcc -Wall -Werror -Wextra    -c -o src/init_img.o src/init_img.c
+ 
 gcc -Wall -Werror -Wextra    -c -o src/moves.o src/moves.c
 gcc -Wall -Werror -Wextra    -c -o src/paint.o src/paint.c
 gcc -Wall -Werror -Wextra    -c -o src/update_map.o src/update_map.c
