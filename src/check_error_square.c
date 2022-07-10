@@ -6,12 +6,13 @@
 /*   By: bbourcy <bbourcy@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 18:39:05 by bbourcy           #+#    #+#             */
-/*   Updated: 2022/07/07 15:47:01 by bbourcy          ###   ########.fr       */
+/*   Updated: 2022/07/08 18:11:44 by bbourcy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
+//	check if there is a closed square
 int	check_square(t_so_long *mygame)
 {
 	int	index;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   check_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbourcy <bbourcy@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 18:38:58 by bbourcy           #+#    #+#             */
-/*   Updated: 2022/06/29 17:38:41 by bbourcy          ###   ########.fr       */
+/*   Updated: 2022/07/08 18:11:43 by bbourcy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,96 +14,96 @@
 
 int	checkmap_lu(t_so_long *mygame)
 {
-	int	iheight;
-	int	jwidth;
+	int	height;
+	int	width;
 
-	iheight = 0;
-	jwidth = 0;
-	while (iheight < mygame->img_height)
+	height = 0;
+	width = 0;
+	while (height < mygame->img_height)
 	{
-		if (mygame->map.map[iheight][jwidth] != '1')
+		if (mygame->map.map[height][width] != '1')
 			return (-1);
-		iheight++;
+		height++;
 	}
-	iheight = 0;
-	jwidth = 0;
-	while (jwidth < mygame->img_width)
+	height = 0;
+	width = 0;
+	while (width < mygame->img_width)
 	{
-		if (mygame->map.map[iheight][jwidth] != '1')
+		if (mygame->map.map[height][width] != '1')
 			return (-1);
-		jwidth++;
+		width++;
 	}
 	return (0);
 }
 
 int	checkmap_rd(t_so_long *mygame)
 {
-	int	iheight;
-	int	jwidth;
+	int	height;
+	int	width;
 
-	iheight = 0;
-	jwidth = mygame->img_width - 1;
-	while (iheight < mygame->img_height)
+	height = 0;
+	width = mygame->img_width - 1;
+	while (height < mygame->img_height)
 	{
-		if (mygame->map.map[iheight][jwidth] != '1')
+		if (mygame->map.map[height][width] != '1')
 			return (-1);
-		iheight++;
+		height++;
 	}
-	iheight = mygame->img_height - 1;
-	jwidth = 0;
-	while (jwidth < mygame->img_width)
+	height = mygame->img_height - 1;
+	width = 0;
+	while (width < mygame->img_width)
 	{
-		if (mygame->map.map[iheight][jwidth] != '1')
+		if (mygame->map.map[height][width] != '1')
 			return (-1);
-		jwidth++;
+		width++;
 	}
 	return (0);
 }
 
 int	checkmap_in(t_so_long *mygame)
 {
-	int		iheight;
-	int		jwidth;
+	int		height;
+	int		width;
 	char	c;
 
-	iheight = 0;
-	jwidth = 0;
-	while (iheight < mygame->img_height)
+	height = 0;
+	width = 0;
+	while (height < mygame->img_height)
 	{
-		while (jwidth < mygame->img_width)
+		while (width < mygame->img_width)
 		{
-			c = mygame->map.map[iheight][jwidth];
+			c = mygame->map.map[height][width];
 			if (c != '0' && c != '1' && c != 'P' && c != 'C' && c != 'E')
 				return (-1);
-			jwidth++;
+			width++;
 		}
-		iheight++;
-		jwidth = 0;
+		height++;
+		width = 0;
 	}
 	return (0);
 }
 
 int	check_min(t_so_long *mygame)
 {
-	int	iheight;
-	int	jwidth;
+	int	height;
+	int	width;
 
-	iheight = 0;
-	jwidth = 0;
-	while (iheight < mygame->img_height)
+	height = 0;
+	width = 0;
+	while (height < mygame->img_height)
 	{
-		while (jwidth < mygame->img_width)
+		while (width < mygame->img_width)
 		{
-			if (mygame->map.map[iheight][jwidth] == 'P')
+			if (mygame->map.map[height][width] == 'P')
 				mygame->maperrors.plycount++;
-			else if (mygame->map.map[iheight][jwidth] == 'C')
+			else if (mygame->map.map[height][width] == 'C')
 				mygame->maperrors.colcount++;
-			else if (mygame->map.map[iheight][jwidth] == 'E')
+			else if (mygame->map.map[height][width] == 'E')
 				mygame->maperrors.extcount++;
-			jwidth++;
+			width++;
 		}
-		iheight++;
-		jwidth = 0;
+		height++;
+		width = 0;
 	}
 	if (mygame->maperrors.plycount < 1 || mygame->maperrors.colcount < 1
 		|| mygame->maperrors.extcount < 1)

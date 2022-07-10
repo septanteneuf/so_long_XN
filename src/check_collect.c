@@ -6,7 +6,7 @@
 /*   By: bbourcy <bbourcy@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 18:37:49 by bbourcy           #+#    #+#             */
-/*   Updated: 2022/07/07 15:52:16 by bbourcy          ###   ########.fr       */
+/*   Updated: 2022/07/08 17:17:06 by bbourcy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 //		counting the collectible
 void	count_col(t_so_long *mygame)
 {
-//	int	screencol;
-
 	mygame->collectible--;
-//	screencol = mygame->colsum - mygame->collectible;
 }
 
 void	check_col(t_so_long *mygame)

@@ -6,7 +6,7 @@
 /*   By: bbourcy <bbourcy@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 18:39:20 by bbourcy           #+#    #+#             */
-/*   Updated: 2022/06/29 17:29:42 by bbourcy          ###   ########.fr       */
+/*   Updated: 2022/07/08 18:15:18 by bbourcy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,28 @@
 # include <errno.h>
 # include <stdio.h>
 
-typedef struct s_map
+typedef struct	s_map
 {
 	char	**map;
-}	t_map;
+}				t_map;
 
-typedef struct s_player
+typedef struct	s_player
 {
 	int		horizontal;
 	int		vertical;
 	t_map	map;
 
-}	t_player;
+}				t_player;
 
-typedef struct s_errors
+typedef struct	s_errors
 {
 	int		colcount;
 	int		plycount;
 	int		extcount;
 
-}	t_errors;
+}				t_errors;
 
-typedef struct s_so_long
+typedef struct	s_so_long
 {
 	t_map		map;
 	t_player	myplayer;
@@ -52,7 +52,7 @@ typedef struct s_so_long
 	void		*mlx;
 	void		*window;
 
-	void		*path;
+	void		*floor;
 	void		*wall;
 	void		*player;
 	void		*collect;
@@ -63,7 +63,7 @@ typedef struct s_so_long
 
 	int			steps;
 
-	char		*rel_path_path;
+	char		*rel_path_floor;
 	char		*rel_path_wall;
 	char		*rel_path_ply;
 	char		*rel_path_col;
@@ -74,7 +74,7 @@ typedef struct s_so_long
 	int			i;
 	int			j;
 
-}	t_so_long;
+}				t_so_long;
 
 //		initializing the pictures
 void	init_img(t_so_long *mygame);
@@ -85,7 +85,7 @@ void	set_collect(int jwidth, int iheight, t_so_long *mygame);
 
 //		paiting functions
 void	paint_wall(int x, int y, t_so_long *wall);
-void	paint_path(int x, int y, t_so_long *path);
+void	paint_floor(int x, int y, t_so_long *floor);
 void	paint_player(int x, int y, t_so_long *playerimg);
 void	paint_collect(int x, int y, t_so_long *collect);
 void	paint_exit(int x, int y, t_so_long *exitus);

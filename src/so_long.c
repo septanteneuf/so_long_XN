@@ -6,7 +6,7 @@
 /*   By: bbourcy <bbourcy@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 18:40:23 by bbourcy           #+#    #+#             */
-/*   Updated: 2022/07/08 16:23:46 by bbourcy          ###   ########.fr       */
+/*   Updated: 2022/07/08 18:04:45 by bbourcy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,89 +14,89 @@
 
 int	count_map_unit(char **argv)
 {
-	int		fdnbr;
-	int		linenbr;
+	int		fd_nbr;
+	int		line_nbr;
 	char	*str;
 
-	fdnbr = open(argv[1], O_RDONLY);
-	linenbr = 0;
+	fd_nbr = open(argv[1], O_RDONLY);
+	line_nbr = 0;
 	while (1)
 	{
-		str = get_next_line(fdnbr);
+		str = get_next_line(fd_nbr);
 		if (!str)
 			break ;
 		free (str);
-		linenbr++;
+		line_nbr++;
 	}
-	close(fdnbr);
-	return (linenbr);
+	close(fd_nbr);
+	return (line_nbr);
 }
 
 void	read_map(t_so_long *mygame, char **argv)
 {
-	int		fdnbr;
-	int		linenbr;
+	int		fd_nbr;
+	int		line_nbr;
 	char	*str;
 
-	linenbr = count_map_unit(argv);
-	fdnbr = open(argv[1], O_RDONLY);
-	mygame->map.map = (char **)malloc(linenbr * sizeof(char *));
-	linenbr = 0;
+	line_nbr = count_map_unit(argv);
+	fd_nbr = open(argv[1], O_RDONLY);
+	mygame->map.map = (char **)malloc(line_nbr * sizeof(char *));
+	line_nbr = 0;
 	while (1)
 	{
-		str = get_next_line(fdnbr);
+		str = get_next_line(fd_nbr);
 		if (!str)
 			break ;
-		mygame->map.map[linenbr] = str;
-		linenbr++;
+		mygame->map.map[line_nbr] = str;
+		line_nbr++;
 	}
-	close(fdnbr);
-	mygame->img_height = linenbr;
+	close(fd_nbr);
+	mygame->img_height = line_nbr;
 	mygame->img_width = ft_strlen(mygame->map.map[0]);
 }
 
 void	map_base(t_so_long *mygame)
 {
-	int	iheight;
-	int	jwidth;
+	int	height;
+	int	width;
 
-	iheight = 0;
-	jwidth = 0;
-	while (iheight < mygame->img_height)
+	height = 0;
+	width = 0;
+	while (height < mygame->img_height)
 	{
-		while (jwidth < mygame->img_width)
+		while (width < mygame->img_width)
 		{
-			paint_path(jwidth, iheight, mygame);
-			jwidth++;
+			paint_floor(width, height, mygame);
+			width++;
 		}
-		iheight++;
-		jwidth = 0;
+		height++;
+		width = 0;
 	}
 }
 
 void	paint_map(t_so_long *mygame)
 {
-	int	iheight;
-	int	jwidth;
+	int	height;
+	int	width;
 
-	iheight = 0;
-	jwidth = 0;
-	while (iheight < mygame->img_height)
+	height = 0;
+	width = 0;
+	while (height < mygame->img_height)
 	{
-		while (jwidth < mygame->img_width)
+		while (width < mygame->img_width)
 		{
-			if (mygame->map.map[iheight][jwidth] == '1')
-				paint_wall(jwidth, iheight, mygame);
-			else if (mygame->map.map[iheight][jwidth] == 'P')
-				set_player(jwidth, iheight, mygame);
-			else if (mygame->map.map[iheight][jwidth] == 'C')
-				set_collect(jwidth, iheight, mygame);
-			else if (mygame->map.map[iheight][jwidth] == 'E')
-				paint_exit(jwidth, iheight, mygame);
-			jwidth++;
+			if (mygame->map.map[height][width] == '1')
+				paint_wall(width, height, mygame);
+			else if (mygame->map.map[height][width] == 'P')
+				set_player(width, height, mygame);
+			else if (mygame->map.map[height][width] == 'C')
+				set_collect(width, height, mygame);
+			else if (mygame->map.map[height][width] == 'E')
+				paint_exit(width, height, mygame);
+			width++;
 		}
-		iheight++;
-		jwidth = 0;
+		height++;
+		width = 0;
 	}
 }
 

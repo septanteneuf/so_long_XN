@@ -6,17 +6,17 @@
 /*   By: bbourcy <bbourcy@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 18:40:00 by bbourcy           #+#    #+#             */
-/*   Updated: 2022/06/29 17:35:06 by bbourcy          ###   ########.fr       */
+/*   Updated: 2022/07/08 18:13:20 by bbourcy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-//initializing the pictures
+//		initializing the pictures
 void	init_img(t_so_long *mygame)
 {
-	mygame->rel_path_path = "./img/floor.xpm";
-	mygame->path = mlx_xpm_file_to_image(mygame->mlx, mygame->rel_path_path,
+	mygame->rel_path_floor = "./img/floor.xpm";
+	mygame->floor = mlx_xpm_file_to_image(mygame->mlx, mygame->rel_path_floor,
 			&mygame->i, &mygame->j);
 	mygame->rel_path_wall = "./img/wall.xpm";
 	mygame->wall = mlx_xpm_file_to_image(mygame->mlx, mygame->rel_path_wall,
@@ -32,7 +32,7 @@ void	init_img(t_so_long *mygame)
 			&mygame->i, &mygame->j);
 }
 
-//setting the player coordinates
+//		setting the player coordinates
 void	set_player(int jwidth, int iheight, t_so_long *mygame)
 {
 	mygame->myplayer.horizontal = jwidth;
@@ -40,7 +40,7 @@ void	set_player(int jwidth, int iheight, t_so_long *mygame)
 	paint_player(jwidth, iheight, mygame);
 }
 
-//setting and counting up the collectibles
+//		setting and counting up the collectibles
 void	set_collect(int jwidth, int iheight, t_so_long *mygame)
 {
 	mygame->colsum++;

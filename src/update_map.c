@@ -6,13 +6,13 @@
 /*   By: bbourcy <bbourcy@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 18:42:29 by bbourcy           #+#    #+#             */
-/*   Updated: 2022/07/07 15:50:08 by bbourcy          ###   ########.fr       */
+/*   Updated: 2022/07/08 18:14:37 by bbourcy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-//		for updatiing the map
+//		for updating the map
 void	update_map(int x, int y, t_so_long *mypath)
 {
 	int	y_next;
@@ -46,15 +46,15 @@ void	current_field(int x, int y, t_so_long *mypath)
 	{
 		paint_exit(x, y, mypath);
 		paint_player(x_next, y_next, mypath);
-		paint_path(x, y, mypath);
+		paint_floor(x, y, mypath);
 		paint_exit(x, y, mypath);
 	}
 	else
 	{
-		paint_path(x, y, mypath);
+		paint_floor(x, y, mypath);
 		if (mypath->map.map[y_next][x_next] == 'E')
 		{
-			paint_path(x, y, mypath);
+			paint_floor(x, y, mypath);
 			paint_exit(x, y, mypath);
 		}
 		else
