@@ -16,13 +16,26 @@ SRC		=	src/so_long.c \
 
 OBJ 	=	$(SRC:.c=.o)
 
+#OS		:=	$(shell os)
+
+# OSFLAG	:=
+# 			ifeq ($(OS),Darwin) #Mac OS
+#     		echo "MacOS"
+#     		MLX_DIR = -I /mlx
+# 			endif
+
+# 			ifeq ($(OS),Linux) #Linux based systems
+# 			echo "Linux"
+# 			MLX_DIR = -I /mlx_linux
+# 			endif
+
 all: 		$(NAME)
 
 $(NAME) : 	$(OBJ)
 			make -C ft_printf
 			make -C libft
 #			$(CC) $(CFLAGS) $(SRC) ft_printf/libftprintf.a libft/libft.a mlx/libmlx.a -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
-			$(CC) $(CFLAGS) $(SRC) ft_printf/libftprintf.a libft/libft.a mlx/libmlx.dylib -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+			$(CC) $(CFLAGS) $(SRC) ft_printf/libftprintf.a libft/libft.a -Lmlx -lmlx -Ilmx -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
 			make clean -C ft_printf
