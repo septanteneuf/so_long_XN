@@ -6,13 +6,13 @@
 /*   By: bbourcy <bbourcy@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 18:40:00 by bbourcy           #+#    #+#             */
-/*   Updated: 2022/07/08 18:13:20 by bbourcy          ###   ########.fr       */
+/*   Updated: 2022/07/10 10:33:20 by bbourcy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-//		initializing the pictures
+//		initializing the pictures from xmp to visible img
 void	init_img(t_so_long *mygame)
 {
 	mygame->rel_path_floor = "./img/floor.xpm";
@@ -33,17 +33,17 @@ void	init_img(t_so_long *mygame)
 }
 
 //		setting the player coordinates
-void	set_player(int jwidth, int iheight, t_so_long *mygame)
+void	set_player(int width, int height, t_so_long *mygame)
 {
-	mygame->myplayer.horizontal = jwidth;
-	mygame->myplayer.vertical = iheight;
-	paint_player(jwidth, iheight, mygame);
+	mygame->myplayer.horizontal = width;
+	mygame->myplayer.vertical = height;
+	paint_player(width, height, mygame);
 }
 
 //		setting and counting up the collectibles
-void	set_collect(int jwidth, int iheight, t_so_long *mygame)
+void	set_collect(int width, int height, t_so_long *mygame)
 {
 	mygame->colsum++;
 	mygame->collectible++;
-	paint_collect(jwidth, iheight, mygame);
+	paint_collect(width, height, mygame);
 }

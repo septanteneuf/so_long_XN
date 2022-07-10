@@ -6,7 +6,7 @@
 /*   By: bbourcy <bbourcy@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 18:40:07 by bbourcy           #+#    #+#             */
-/*   Updated: 2022/06/29 17:39:00 by bbourcy          ###   ########.fr       */
+/*   Updated: 2022/07/10 10:33:17 by bbourcy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,27 @@
 //		for moving the player around
 void	up(t_so_long *mygame)
 {
-	int	iheight;
-	int	jwidth;
+	int	height;
+	int	width;
 
-	iheight = mygame->myplayer.vertical;
-	jwidth = mygame->myplayer.horizontal;
-	if (mygame->map.map[iheight - 1][jwidth] == '0'
-		|| mygame->map.map[iheight - 1][jwidth] == 'C')
+	height = mygame->myplayer.vertical;
+	width = mygame->myplayer.horizontal;
+	if (mygame->map.map[height - 1][width] == '0'
+		|| mygame->map.map[height - 1][width] == 'C')
 	{
-		if (mygame->map.map[iheight - 1][jwidth] == 'C')
+		if (mygame->map.map[height - 1][width] == 'C')
 			count_col(mygame);
 		mygame->myplayer.vertical--;
-		update_map(jwidth, iheight, mygame);
-		current_field(jwidth, iheight, mygame);
+		update_map(width, height, mygame);
+		current_field(width, height, mygame);
 		mygame->steps++;
 		ft_printf("You made %d moves\n", mygame->steps);
 	}
-	else if (mygame->map.map[iheight - 1][jwidth] == 'E')
+	else if (mygame->map.map[height - 1][width] == 'E')
 	{
 		mygame->myplayer.vertical--;
-		update_map(jwidth, iheight, mygame);
-		current_field(jwidth, iheight, mygame);
+		update_map(width, height, mygame);
+		current_field(width, height, mygame);
 		check_col(mygame);
 		mygame->steps++;
 		ft_printf("You made %d moves\n", mygame->steps);
@@ -44,27 +44,27 @@ void	up(t_so_long *mygame)
 
 void	left(t_so_long *mygame)
 {
-	int	iheight;
-	int	jwidth;
+	int	height;
+	int	width;
 
-	iheight = mygame->myplayer.vertical;
-	jwidth = mygame->myplayer.horizontal;
-	if (mygame->map.map[iheight][jwidth - 1] == '0'
-		|| mygame->map.map[iheight][jwidth - 1] == 'C')
+	height = mygame->myplayer.vertical;
+	width = mygame->myplayer.horizontal;
+	if (mygame->map.map[height][width - 1] == '0'
+		|| mygame->map.map[height][width - 1] == 'C')
 	{
-		if (mygame->map.map[iheight][jwidth - 1] == 'C')
+		if (mygame->map.map[height][width - 1] == 'C')
 			count_col(mygame);
 		mygame->myplayer.horizontal--;
-		update_map(jwidth, iheight, mygame);
-		current_field(jwidth, iheight, mygame);
+		update_map(width, height, mygame);
+		current_field(width, height, mygame);
 		mygame->steps++;
 		ft_printf("You made %d moves\n", mygame->steps);
 	}
-	else if (mygame->map.map[iheight][jwidth - 1] == 'E')
+	else if (mygame->map.map[height][width - 1] == 'E')
 	{
 		mygame->myplayer.horizontal--;
-		update_map(jwidth, iheight, mygame);
-		current_field(jwidth, iheight, mygame);
+		update_map(width, height, mygame);
+		current_field(width, height, mygame);
 		check_col(mygame);
 		mygame->steps++;
 		ft_printf("You made %d moves\n", mygame->steps);
@@ -73,27 +73,27 @@ void	left(t_so_long *mygame)
 
 void	bottom(t_so_long *mygame)
 {
-	int	iheight;
-	int	jwidth;
+	int	height;
+	int	width;
 
-	iheight = mygame->myplayer.vertical;
-	jwidth = mygame->myplayer.horizontal;
-	if (mygame->map.map[iheight + 1][jwidth] == '0'
-		|| mygame->map.map[iheight + 1][jwidth] == 'C')
+	height = mygame->myplayer.vertical;
+	width = mygame->myplayer.horizontal;
+	if (mygame->map.map[height + 1][width] == '0'
+		|| mygame->map.map[height + 1][width] == 'C')
 	{
-		if (mygame->map.map[iheight + 1][jwidth] == 'C')
+		if (mygame->map.map[height + 1][width] == 'C')
 			count_col(mygame);
 		mygame->myplayer.vertical++;
-		update_map(jwidth, iheight, mygame);
-		current_field(jwidth, iheight, mygame);
+		update_map(width, height, mygame);
+		current_field(width, height, mygame);
 		mygame->steps++;
 		ft_printf("You made %d moves\n", mygame->steps);
 	}
-	else if (mygame->map.map[iheight + 1][jwidth] == 'E')
+	else if (mygame->map.map[height + 1][width] == 'E')
 	{
 		mygame->myplayer.vertical++;
-		update_map(jwidth, iheight, mygame);
-		current_field(jwidth, iheight, mygame);
+		update_map(width, height, mygame);
+		current_field(width, height, mygame);
 		check_col(mygame);
 		mygame->steps++;
 		ft_printf("You made %d moves\n", mygame->steps);
@@ -102,27 +102,27 @@ void	bottom(t_so_long *mygame)
 
 void	right(t_so_long *mygame)
 {
-	int	iheight;
-	int	jwidth;
+	int	height;
+	int	width;
 
-	iheight = mygame->myplayer.vertical;
-	jwidth = mygame->myplayer.horizontal;
-	if (mygame->map.map[iheight][jwidth + 1] == '0'
-		|| mygame->map.map[iheight][jwidth + 1] == 'C')
+	height = mygame->myplayer.vertical;
+	width = mygame->myplayer.horizontal;
+	if (mygame->map.map[height][width + 1] == '0'
+		|| mygame->map.map[height][width + 1] == 'C')
 	{
-		if (mygame->map.map[iheight][jwidth + 1] == 'C')
+		if (mygame->map.map[height][width + 1] == 'C')
 			count_col(mygame);
 		mygame->myplayer.horizontal++;
-		update_map(jwidth, iheight, mygame);
-		current_field(jwidth, iheight, mygame);
+		update_map(width, height, mygame);
+		current_field(width, height, mygame);
 		mygame->steps++;
 		ft_printf("You made %d moves\n", mygame->steps);
 	}
-	else if (mygame->map.map[iheight][jwidth + 1] == 'E')
+	else if (mygame->map.map[height][width + 1] == 'E')
 	{
 		mygame->myplayer.horizontal++;
-		update_map(jwidth, iheight, mygame);
-		current_field(jwidth, iheight, mygame);
+		update_map(width, height, mygame);
+		current_field(width, height, mygame);
 		check_col(mygame);
 		mygame->steps++;
 		ft_printf("You made %d moves\n", mygame->steps);

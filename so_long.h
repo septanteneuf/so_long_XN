@@ -6,7 +6,7 @@
 /*   By: bbourcy <bbourcy@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 18:39:20 by bbourcy           #+#    #+#             */
-/*   Updated: 2022/07/08 18:15:18 by bbourcy          ###   ########.fr       */
+/*   Updated: 2022/07/10 10:33:52 by bbourcy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,9 @@ typedef struct	s_so_long
 //		initializing the pictures
 void	init_img(t_so_long *mygame);
 //		setting the player coordinates
-void	set_player(int jwidth, int iheight, t_so_long *mygame);
+void	set_player(int width, int height, t_so_long *mygame);
 //		etting and counting up the collectibles
-void	set_collect(int jwidth, int iheight, t_so_long *mygame);
+void	set_collect(int width, int height, t_so_long *mygame);
 
 //		paiting functions
 void	paint_wall(int x, int y, t_so_long *wall);
@@ -99,7 +99,7 @@ void	right(t_so_long *mygame);
 
 //		for updatiing the map
 void	update_map(int x, int y, t_so_long *mypath);
-void	current_field(int iheight, int jwidth, t_so_long *mygame);
+void	current_field(int height, int width, t_so_long *mygame);
 
 //		dealing with errors
 void	errors(t_so_long *mygame);
