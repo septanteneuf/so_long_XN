@@ -1,8 +1,7 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory `/Users/bbourcy/42/cursus/rank2/so_long_XN'
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/79Prod/42/cursus/rank2/so_long_XN'
 gcc -Wall -Werror -Wextra    -c -o src/so_long.o src/so_long.c
 gcc -Wall -Werror -Wextra    -c -o src/check_collect.o src/check_collect.c
- 
 gcc -Wall -Werror -Wextra    -c -o src/check_errors.o src/check_errors.c
 gcc -Wall -Werror -Wextra    -c -o src/check_error_square.o src/check_error_square.c
 gcc -Wall -Werror -Wextra    -c -o src/exit_game.o src/exit_game.c
@@ -13,5 +12,5 @@ gcc -Wall -Werror -Wextra    -c -o src/update_map.o src/update_map.c
 make -C ft_printf
 make -C libft
 gcc -Wall -Werror -Wextra  src/so_long.c src/check_collect.c src/check_errors.c src/check_error_square.c src/exit_game.c src/init_img.c src/moves.c src/paint.c src/update_map.c  ft_printf/libftprintf.a libft/libft.a mlx/libmlx.dylib -Lmlx -lmlx -framework OpenGL -framework AppKit -o so_long 
-make: Leaving directory `/Users/bbourcy/42/cursus/rank2/so_long_XN'
+make: Leaving directory `/Users/79Prod/42/cursus/rank2/so_long_XN'
  

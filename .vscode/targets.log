@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `src/so_long.o', needed by `so_long'.  Stop.
 
 
-# Make data base, printed on Fri Jul  8 18:45:40 2022
+# Make data base, printed on Sun Jul 10 11:20:33 2022
 
 # Variables
 
@@ -22,8 +22,6 @@ make: *** No rule to make target `src/so_long.o', needed by `so_long'.  Stop.
 OBJ = $(SRC:.c=.o)
 # makefile (from `Makefile', line 7)
 SRC = src/so_long.c src/check_collect.c src/check_errors.c src/check_error_square.c src/exit_game.c src/init_img.c src/moves.c src/paint.c src/update_map.c 
-# environment
-VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -31,11 +29,11 @@ VSCODE_LOG_NATIVE = false
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/bbourcy/42/cursus/rank2/so_long_XN
+CURDIR := /Users/79Prod/42/cursus/rank2/so_long_XN
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 3)
@@ -43,41 +41,33 @@ CFLAGS = -Wall -Werror -Wextra
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
-VSCODE_VERBOSE_LOGGING = true
-# environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000c_l80032mt/T/vscode-ipc-275c2ec3-91fc-4981-b915-c89c1c6a2e7d.sock
+__CFBundleIdentifier = com.microsoft.VSCode
 # environment
 VSCODE_CWD = /
 # environment
-PATH = /Users/bbourcy/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Apple/usr/bin
-# environment
-VSCODE_LOG_STACK = false
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.aorj4uN1y9/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.FymVD1B8m5/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-HOMEBREW_TEMP = /tmp/bbourcy/Homebrew/Temp
-# environment
-VSCODE_PIPE_LOGGING = true
-# environment
-PWD = /Users/bbourcy/42/cursus/rank2/so_long_XN
+PWD = /Users/79Prod/42/cursus/rank2/so_long_XN
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-HOME = /Users/bbourcy
+HOME = /Users/79Prod
 # default
-MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
+MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/bbourcy/Library/Application Support/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
+VSCODE_CODE_CACHE_PATH = /Users/79Prod/Library/Application Support/Code/CachedData/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9
 # environment
-LOGNAME = bbourcy
+LOGNAME = 79Prod
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
@@ -91,15 +81,13 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-HOMEBREW_CACHE = /tmp/bbourcy/Homebrew/Caches
-# environment
 SHLVL = 1
 # makefile (from `Makefile', line 1)
 CC = gcc
 # default
 MAKE_VERSION := 3.81
 # environment
-USER = bbourcy
+USER = 79Prod
 # makefile
 .DEFAULT_GOAL := all
 # makefile (from `Makefile', line 5)
@@ -107,15 +95,17 @@ NAME = so_long
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
-MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
 # default
 .VARIABLES := 
 # environment
-TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n000c_l80032mt/T/
+TMPDIR = /var/folders/m6/6qt3nz5d0cbfhsdlss4yh7bw0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/bbourcy/Library/Application Support/Code/1.68.1-main.sock
+VSCODE_IPC_HOOK = /Users/79Prod/Library/Application Support/Code/1.69.0-main.sock
+# environment
+MallocNanoZone = 0
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -125,13 +115,15 @@ MFLAGS = -Rrqp
 # environment
 MAIL = bbourcy@student.42lausanne.ch
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.2380
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.12935657207.12935657213
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
-__CF_USER_TEXT_ENCODING = 0x18A9A:0x0:0x0
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x12
+# environment
+COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
@@ -149,9 +141,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 60998
+VSCODE_PID = 7186
 # variable set hash-table stats:
-# Load=68/1024=7%, Rehash=0, Collisions=3/96=3%
+# Load=64/1024=6%, Rehash=0, Collisions=3/92=3%
 
 # Pattern-specific Variable Values
 
@@ -159,9 +151,9 @@ VSCODE_PID = 60998
 
 # Directories
 
-# . (device 16777225, inode 1571747): 15 files, no impossibilities.
+# . (device 16777223, inode 12935747235): 16 files, no impossibilities.
 
-# 15 files, no impossibilities in 1 directories.
+# 16 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -198,7 +190,7 @@ all: so_long
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-08 18:29:16
+#  Last modified 2022-07-10 10:13:52
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -221,7 +213,7 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 38):
+#  commands to execute (from `Makefile', line 33):
 	make fclean -C ft_printf
 	make fclean -C libft
 	rm -f $(NAME)
@@ -258,7 +250,7 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 33):
+#  commands to execute (from `Makefile', line 28):
 	make clean -C ft_printf
 	make clean -C libft
 	rm -f $(OBJ)
@@ -282,7 +274,7 @@ so_long: src/so_long.o src/check_collect.o src/check_errors.o src/check_error_sq
 #  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 23):
+#  commands to execute (from `Makefile', line 22):
 	make -C ft_printf
 	make -C libft
 	$(CC) $(CFLAGS) $(SRC) ft_printf/libftprintf.a libft/libft.a mlx/libmlx.dylib -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
@@ -313,6 +305,6 @@ src/paint.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Jul  8 18:45:40 2022
+# Finished Make data base on Sun Jul 10 11:20:33 2022
 
  
